@@ -4,30 +4,28 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pylock-bridge"
-version = "0.1.0"
-description = "Inspect, plan, and validate Python dependency intent across pyproject.toml and pylock targets."
+version = "1.0.0"
+description = "Convert, sync, and validate dependency intent between pyproject.toml, dependency groups, and pylock.toml."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
-authors = [
-  {name = "OpenAI", email = "support@openai.com"}
-]
 keywords = ["packaging", "pyproject", "pylock", "dependency-groups", "monorepo"]
+dependencies = [
+  "tomli>=2; python_version < '3.11'",
+]
 classifiers = [
-  "Development Status :: 3 - Alpha",
+  "Development Status :: 5 - Production/Stable",
   "Intended Audience :: Developers",
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
   "Topic :: Software Development :: Build Tools",
+  "Topic :: Software Development :: Libraries :: Python Modules",
   "Topic :: System :: Systems Administration"
 ]
-
-[project.urls]
-Homepage = "https://example.com/pylock-bridge"
-Repository = "https://example.com/pylock-bridge"
 
 [project.scripts]
 pylock-bridge = "pylock_bridge.cli:main"
@@ -35,5 +33,11 @@ pylock-bridge = "pylock_bridge.cli:main"
 [tool.setuptools]
 package-dir = {"" = "src"}
 
+[tool.setuptools.package-data]
+pylock_bridge = ["py.typed"]
+
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.unittest]
+test-suite = "tests"
