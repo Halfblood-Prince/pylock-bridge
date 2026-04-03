@@ -1,6 +1,6 @@
 """Public package interface for pylock-bridge."""
 
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 
 from .api import (
     discover_projects,

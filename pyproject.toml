@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pylock-bridge"
-version = "1.0.1"
+version = "1.0.2"
 description = "Convert, sync, and validate dependency intent between pyproject.toml, dependency groups, and pylock.toml."
 readme = "README.md"
 requires-python = ">=3.10"
